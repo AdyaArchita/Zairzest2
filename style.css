@@ -46,6 +46,20 @@ nav ul a:hover {
     gap: 75px;
 }
 
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.Zairzest-Beyno, .Four-O {
+    display: inline-block;
+    line-height: 1;
+}
+
 .Zairzest-Beyno {
     font-family: 'BEYNO';
     font-size: 35.2px;
@@ -57,12 +71,6 @@ nav ul a:hover {
     font-family: 'Mohave';
     font-size: 32.5px;
     letter-spacing: 9px;
-}
-
-.right-nav {
-    display: flex;
-    gap: 25px;
-    cursor: pointer;
 }
 
 .top-sec {
@@ -369,7 +377,7 @@ footer {
 @media screen and (max-width: 407px) {
     .top-btn-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .top-btn-container button {
@@ -388,5 +396,17 @@ footer {
 
     .right-nav {
         gap: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    nav {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .right-nav {
+        justify-content: center;
+        width: 100%;
     }
 }
