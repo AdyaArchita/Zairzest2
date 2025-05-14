@@ -1,0 +1,302 @@
+@font-face {
+    font-family: Outfit;
+    src: url(Outfit-Regular.e853df41b41bc9489a8b.ttf)
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Outfit;
+    margin: 0
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0
+}
+
+.login-left-container {
+    background: #0000;
+    min-height: 100vh;
+    width: 150rem
+}
+
+.auth-container {
+    background-color: #fff;
+    height: 100vh
+}
+
+.auth-container,.auth-container .auth-box-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+.auth-container .auth-box-container {
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: auto
+}
+
+.auth-box {
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.auth-heading {
+    color: #38ccff;
+    font-size: 2rem;
+    margin-bottom: .2rem
+}
+
+.auth-head-bottom {
+    color: #858585;
+    font-size: 1.1rem
+}
+
+.auth-input {
+    border: 1px solid #939393;
+    border-radius: 8px;
+    font-size: 1rem;
+    height: 2.5rem;
+    margin-top: .9rem;
+    padding-left: 1rem;
+    width: 95%
+}
+
+.input-div {
+    position: relative
+}
+
+.eye-icon {
+    font-size: 1.2rem;
+    left: 85%;
+    position: absolute;
+    top: 1.5rem
+}
+
+.auth-buttons {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0
+}
+
+.auth-buttons .or {
+    margin-top: 1rem
+}
+
+.auth-sbutton {
+    background: #38ccff;
+    border: none;
+    border-radius: 8px;
+    color: #01265d;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 700;
+    height: 3rem;
+    margin-top: 1rem;
+    width: 7rem
+}
+
+.auth-gbutton {
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    color: #01265d;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    white-space: nowrap;
+    width: 9rem
+}
+
+.auth-gbutton p {
+    font-size: .9rem;
+    font-weight: 700;
+    margin-left: .85rem
+}
+
+.auth-gbutton img {
+    height: 2rem;
+    margin-right: .5rem;
+    width: 2rem
+}
+
+.auth-gbutton:hover {
+    background-color: #ddd
+}
+
+.auth-sbutton:hover {
+    background-color: #00b5f1
+}
+
+.auth-bottom-text {
+    color: #858585;
+    display: flex;
+    font-size: .95rem;
+    margin-top: 1rem
+}
+
+.auth-bottom-text a {
+    color: #38ccff;
+    margin-left: .3rem;
+    text-decoration: underline
+}
+
+.auth-bottom-text-2 {
+    color: #858585;
+    display: flex;
+    font-size: .95rem;
+    margin-top: .3rem
+}
+
+.auth-bottom-text-2 a {
+    color: #38ccff;
+    margin-left: .3rem;
+    text-decoration: underline;
+    white-space: nowrap
+}
+
+.forget-pass {
+    background: #0000;
+    border: none;
+    color: #00b5f1;
+    text-decoration: underline
+}
+
+@media screen and (max-width: 769px) {
+    .auth-container {
+        margin-top:-20px
+    }
+}
+
+@media(max-width: 1020px) {
+    .auth-container {
+        margin-left:0;
+        padding-top: 3rem
+    }
+
+   .auth-container .login-left-container {
+        display: none
+    }
+}
+
+.login-left-container {
+    align-items: center;
+    background-image: url(login\ image.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 5rem
+}
+
+.loginleft-text {
+    font-size: 30px;
+    font-weight: 700
+}
+
+.loginleft-para {
+    width: 370px
+}
+
+.login-left-colors {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem
+}
+
+@media(max-width: 1096px) {
+    .login-left-container {
+        background-repeat:no-repeat;
+        background-size: cover;
+        height: 115vh
+    }
+}
+
+@media(max-width: 1020px) {
+    .login-left-container {
+        width:275px
+    }
+}
+
+@media(max-width: 871px) {
+    .login-left-container {
+        width:200px
+    }
+
+    .loginleft-text {
+        font-size: 25px;
+        width: 300px
+    }
+
+    .loginleft-para {
+        width: 300px
+    }
+}
+
+@media(max-width: 799px) {
+    .login-left-container {
+        height:136vh
+    }
+}
+
+.auth-container {
+    position: relative;
+    z-index: 1000
+}
+
+h1 {
+    font-size: 3.5rem;      /* Bigger font */
+    font-weight: 700;
+    line-height: 1.3;       /* No extra space between lines */
+    margin: 0.3;            /* Remove default spacing */
+    padding: 0;
+}
+
+:root {
+    --toastify-color-light: #fff;
+    --toastify-color-dark: #121212;
+    --toastify-color-info: #3498db;
+    --toastify-color-success: #07bc0c;
+    --toastify-color-warning: #f1c40f;
+    --toastify-color-error: #e74c3c;
+    --toastify-color-transparent: #ffffffb3;
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+    --toastify-toast-width: 320px;
+    --toastify-toast-background: #fff;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: sans-serif;
+    --toastify-z-index: 9999;
+    --toastify-text-color-light: #757575;
+    --toastify-text-color-dark: #fff;
+    --toastify-text-color-info: #fff;
+    --toastify-text-color-success: #fff;
+    --toastify-text-color-warning: #fff;
+    --toastify-text-color-error: #fff;
+    --toastify-spinner-color: #616161;
+    --toastify-spinner-color-empty-area: #e0e0e0;
+    --toastify-color-progress-light: linear-gradient(90deg,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55);
+    --toastify-color-progress-dark: #bb86fc;
+    --toastify-color-progress-info: var(--toastify-color-info);
+    --toastify-color-progress-success: var(--toastify-color-success);
+    --toastify-color-progress-warning: var(--toastify-color-warning);
+    --toastify-color-progress-error: var(--toastify-color-error)
+}
+
