@@ -1,58 +1,84 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Sidebar functionality
+    // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
     const closeBtn = document.querySelector('.close-btn');
 
-    if (hamburger && sidebar) {
-        hamburger.addEventListener('click', function() {
+    console.log('Elements found:', {
+        hamburger: !!hamburger,
+        sidebar: !!sidebar,
+        closeBtn: !!closeBtn
+    });
+
+    // Toggle sidebar when hamburger is clicked
+    if (hamburger) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
+            console.log('Hamburger clicked');
             hamburger.classList.toggle('active');
-            sidebar.classList.toggle('active');
+            if (sidebar) {
+                sidebar.classList.toggle('active');
+            }
         });
     }
 
-    if (closeBtn && sidebar && hamburger) {
-        closeBtn.addEventListener('click', function() {
-            sidebar.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-
-        // Close sidebar when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!sidebar.contains(e.target) && !hamburger.contains(e.target) && sidebar.classList.contains('active')) {
+    // Close sidebar when close button is clicked
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
+            console.log('Close button clicked');
+            if (sidebar) {
                 sidebar.classList.remove('active');
+            }
+            if (hamburger) {
                 hamburger.classList.remove('active');
             }
         });
     }
 
-    // Audio Control
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playPauseIcon = document.getElementById('playPauseIcon');
-    const bgMusic = document.getElementById('bgMusic');
-
-    if (playPauseBtn && playPauseIcon && bgMusic) {
-        console.log("Audio elements found");
-        
-        bgMusic.volume = 0.5;
-        
-        playPauseBtn.onclick = function() {
-            console.log("Button clicked");
-            if (bgMusic.paused) {
-                console.log("Playing audio");
-                bgMusic.play();
-                playPauseIcon.className = 'fa fa-pause';
-            } else {
-                console.log("Pausing audio");
-                bgMusic.pause();
-                playPauseIcon.className = 'fa fa-play';
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (sidebar && hamburger) {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target) && sidebar.classList.contains('active')) {
+                console.log('Clicked outside sidebar');
+                sidebar.classList.remove('active');
+                hamburger.classList.remove('active');
             }
-        };
+        }
+    });
+
+    // Audio Control
+    const btn = document.getElementById('playPauseBtn');
+    const icon = document.getElementById('playPauseIcon');
+    const audio = document.getElementById('bgMusic');
+
+    if (btn && icon && audio) {
+        audio.volume = 0.5;
+        let isPlaying = false;
+
+        btn.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            } else {
+                audio.play();
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        audio.addEventListener('ended', function() {
+            isPlaying = false;
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+        });
     } else {
         console.log("Some audio elements not found:", {
-            playPauseBtn: !!playPauseBtn,
-            playPauseIcon: !!playPauseIcon,
-            bgMusic: !!bgMusic
+            btn: !!btn,
+            icon: !!icon,
+            audio: !!audio
         });
     }
 }); 

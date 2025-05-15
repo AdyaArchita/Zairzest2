@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Zairzest 4.0</title>
 </head>
 
@@ -161,11 +161,99 @@
             </div>
         </div>
     </footer>
-    <audio id="bgMusic" src="Darkside.mp3" loop></audio>
-    <button id="audioControl" class="audio-btn" aria-label="Play/Pause background music">
-        <span class="play-icon"></span>
-        <span class="pause-icon"></span>
-    </button>
+    <div class="music">
+        <div class="music-button">
+            <div class="wrapper">
+                <div class="video-main">
+                    <div class="promo-video">
+                        <div class="waves-block">
+                            <div class="waves wave-1"></div>
+                            <div class="waves wave-2"></div>
+                            <div class="waves wave-3"></div>
+                        </div>
+                    </div>
+                    <button class="video" id="playPauseBtn" aria-label="Play or pause background music">
+                        <i class="fa-solid fa-play" id="playPauseIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="bgMusic" src="Darkside.mp3"></audio>
+
+    <!-- Hamburger Menu Script -->
+    <script>
+        window.addEventListener('load', function() {
+            // Hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const sidebar = document.querySelector('.sidebar');
+            const closeBtn = document.querySelector('.close-btn');
+
+            // Toggle sidebar when hamburger is clicked
+            if (hamburger) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    hamburger.classList.toggle('active');
+                    if (sidebar) {
+                        sidebar.classList.toggle('active');
+                    }
+                });
+            }
+
+            // Close sidebar when close button is clicked
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (sidebar) {
+                        sidebar.classList.remove('active');
+                    }
+                    if (hamburger) {
+                        hamburger.classList.remove('active');
+                    }
+                });
+            }
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(e) {
+                if (sidebar && hamburger) {
+                    if (!sidebar.contains(e.target) && !hamburger.contains(e.target) && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Audio Control Script -->
+    <script>
+        window.addEventListener('load', function() {
+            const btn = document.getElementById('playPauseBtn');
+            const icon = document.getElementById('playPauseIcon');
+            const audio = document.getElementById('bgMusic');
+
+            if (btn && icon && audio) {
+                audio.volume = 0.5;
+                
+                btn.onclick = function() {
+                    if (audio.paused) {
+                        audio.play();
+                        icon.classList.remove('fa-play');
+                        icon.classList.add('fa-pause');
+                    } else {
+                        audio.pause();
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                    }
+                };
+
+                audio.onended = function() {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                };
+            }
+        });
+    </script>
 </body>
 
 </html>
