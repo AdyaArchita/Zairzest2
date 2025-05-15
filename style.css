@@ -385,7 +385,9 @@ footer {
         /* width: 200px; */
     }
 }
-
+a{
+    text-decoration: none;  
+}
 @media screen and (max-width: 445px) {
     .Zairzest-Beyno {
         font-size: calc(16px + 2vw);
