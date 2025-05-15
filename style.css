@@ -410,3 +410,127 @@ footer {
         width: 100%;
     }
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: auto;
+    min-height: fit-content;
+    background-color: #111;
+    transition: right 0.3s ease;
+    z-index: 2000;
+    display: none;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 60px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+}
+
+.close-btn::before {
+    transform: rotate(45deg);
+}
+
+.close-btn::after {
+    transform: rotate(-45deg);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    padding: 15px 30px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+}
+
+.sidebar-img {
+    margin: 200px 0 2.5rem 1rem;
+    width: 100%;
+    max-width: 243px;
+    height: auto;
+    align-self: flex-start;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2001;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media screen and (max-width: 719px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+}
