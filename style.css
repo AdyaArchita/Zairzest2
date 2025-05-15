@@ -596,3 +596,73 @@ a{
         height: auto;
     }
 }
+
+.audio-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #111;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: glow 2s ease-in-out infinite;
+    box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+    }
+    50% {
+        box-shadow: 0 0 20px #111, 0 0 25px #38ccff, 0 0 35px #38ccff;
+    }
+    100% {
+        box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+    }
+}
+
+.play-icon, .pause-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.play-icon {
+    opacity: 1;
+    background: transparent;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 4px;
+}
+
+.pause-icon {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.pause-icon::before,
+.pause-icon::after {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+.audio-btn.playing .play-icon {
+    opacity: 0;
+}
+
+.audio-btn.playing .pause-icon {
+    opacity: 1;
+}

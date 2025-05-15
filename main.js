@@ -20,4 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.classList.remove('active');
         }
     });
+
+    // Audio Control
+    const audioBtn = document.getElementById('audioControl');
+    const audio = document.getElementById('bgMusic');
+
+    audioBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            audioBtn.classList.add('playing');
+        } else {
+            audio.pause();
+            audioBtn.classList.remove('playing');
+        }
+    });
+
+    // Initialize audio state
+    audio.volume = 0.5; // Set initial volume to 50%
 }); 
