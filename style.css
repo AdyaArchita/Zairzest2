@@ -14,7 +14,7 @@
 }
 
 nav {
-    padding: 0px 80px;
+    padding: 0px 45px;
     display: flex;
     background-color: #111;
     height: 5rem;
@@ -377,11 +377,12 @@ footer {
 @media screen and (max-width: 407px) {
     .top-btn-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        padding: 0 13%;
     }
 
     .top-btn-container button {
-        width: 200px;
+        /* width: 200px; */
     }
 }
 
@@ -401,13 +402,32 @@ footer {
 
 @media screen and (max-width: 375px) {
     nav {
-        padding: 0;
+        padding: 0px 0px;
         justify-content: center;
     }
 
     .right-nav {
         justify-content: center;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 298px) {
+    .right-nav {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -532,5 +552,24 @@ footer {
 
     nav {
         position: relative;
+    }
+}
+
+@media screen and (max-width: 831px) {
+    .top-context {
+        margin: 0 auto;
+        text-align: center;
+        width: 90%;
+    }
+
+    .top-btn-container {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .card {
+        aspect-ratio: 1;
+        height: auto;
     }
 }
