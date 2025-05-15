@@ -46,6 +46,20 @@ nav ul a:hover {
     gap: 75px;
 }
 
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.Zairzest-Beyno, .Four-O {
+    display: inline-block;
+    line-height: 1;
+}
+
 .Zairzest-Beyno {
     font-family: 'BEYNO';
     font-size: 35.2px;
@@ -57,12 +71,6 @@ nav ul a:hover {
     font-family: 'Mohave';
     font-size: 32.5px;
     letter-spacing: 9px;
-}
-
-.right-nav {
-    display: flex;
-    gap: 25px;
-    cursor: pointer;
 }
 
 .top-sec {
@@ -145,6 +153,12 @@ nav ul a:hover {
     width: 500px;
 }
 
+.left-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .zen-text {
     color:#38ccff
 }
@@ -174,12 +188,13 @@ nav ul a:hover {
     display: flex;
     gap: 50px;
 }
+
 .card {
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 500px;
+    width: 31.5rem;
     height: 300px;
     background-size: cover;
     cursor: pointer;
@@ -209,7 +224,7 @@ footer {
     padding: 70px;
     background-color: #1a1a1a;
     color: white;
-    height: 60vh;
+    min-height: 60vh;
     font-family: 'Outfit';
     gap: 50px;
 }
@@ -259,4 +274,263 @@ footer {
     align-items: center;
     gap: 10px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .mid-sec {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .middle-f-icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        width: fit-content;
+    }
+
+    .right-half {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .left-half img {
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .mid-sec h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 1116px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 90%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 31.5rem;
+    }
+
+    .bottom-sec {
+        height: auto;
+        padding: 50px 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bottom-sec h1 {
+        font-size: 2em;
+    }
+
+    .bottom-sec p {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 793px) {
+    .middle-f {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .middle-f-text {
+        text-align: center;
+    }
+
+    .middle-f-text p {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .bottom-f {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .bottom-f-left {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    .left-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 407px) {
+    .top-btn-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-btn-container button {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .Zairzest-Beyno {
+        font-size: calc(16px + 2vw);
+    }
+
+    .Four-O {
+        font-size: calc(14px + 2vw);
+    }
+
+    .right-nav {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    nav {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .right-nav {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: auto;
+    min-height: fit-content;
+    background-color: #111;
+    transition: right 0.3s ease;
+    z-index: 2000;
+    display: none;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 60px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+}
+
+.close-btn::before {
+    transform: rotate(45deg);
+}
+
+.close-btn::after {
+    transform: rotate(-45deg);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    padding: 15px 30px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+}
+
+.sidebar-img {
+    margin: 200px 0 2.5rem 1rem;
+    width: 100%;
+    max-width: 243px;
+    height: auto;
+    align-self: flex-start;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2001;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media screen and (max-width: 719px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
 }
