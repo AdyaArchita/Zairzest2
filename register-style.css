@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    font-family: 'Outfit';
+}
+
+.container {
+    display: flex;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70vw;
+    height: 100vh;
+    background-image: url('Images/Register_bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.text {
+    margin-left: 17%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.text h1 {
+    font-size: 4em;
+    font-weight: 500;
+}
+
+.text p {
+    width: 500px;
+}
+
+.register-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40vw;
+    height: 100vh;
+    gap: 25px;
+}
+
+.register-head-text {
+    padding: 30px;
+}
+
+.register-form-container h1 {
+    color: #38ccff;
+    width: 24vw;
+}
+
+.register-form-container p {
+    color: grey;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.register-form-container a {
+    color: #38ccff;
+    text-decoration: none;
+}
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-field {
+    position: relative;;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-field input {
+    width: 60%;
+    height: 50px;
+    padding: 10px;
+    padding-left: 20px;
+    border: 2px solid grey;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.input-field img {
+    position: absolute;
+    top: 30%;
+    right: 25%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-container p {
+    font-size: 1em;
+    font-style: normal;
+}
+
+.sign-up {
+    width: 100px;
+    height: 50px;
+    background-color: #38ccff;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.4s ease;
+}
+
+.sign-up:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px #38ccff;
+}
+
+.sign-up-google {
+    background-color: white;
+    border: 3px solid navy;
+    color: navy;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 150px;
+    height: 50px;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.sign-up-google:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 5px rgb(198, 192, 192);
+}
+
+@media (max-width: 1020px) {
+    .left-container {
+        display: none;
+    }
+
+    .container {
+        justify-content: center;
+    }
+
+    .register-form-container {
+        width: 100vw;
+    }
+
+    .register-head-text h1 {
+        width: 100%;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+
+    .input-field input {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .input-field img {
+        /* margin-left: -10%; */
+        right: 12%;
+    }
+}
+
+@media (max-width: 425px) {
+    .btn-container {
+        flex-direction: column;
+    }
+}
