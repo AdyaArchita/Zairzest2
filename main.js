@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const sidebar = document.querySelector('.sidebar');
-    const closeBtn = document.querySelector('.close-btn');
+    // Sidebar Elements
+    const menuButton = document.querySelector('.navbar__menu');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarButton = document.getElementById('closeSidebar');
 
     console.log('Elements found:', {
-        hamburger: !!hamburger,
+        menuButton: !!menuButton,
         sidebar: !!sidebar,
-        closeBtn: !!closeBtn
+        closeSidebarButton: !!closeSidebarButton
     });
 
-    // Toggle sidebar when hamburger is clicked
-    if (hamburger) {
-        hamburger.addEventListener('click', function(e) {
+    // Toggle sidebar when menu button is clicked
+    if (menuButton) {
+        menuButton.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent event from bubbling up
-            console.log('Hamburger clicked');
-            hamburger.classList.toggle('active');
+            console.log('Menu button clicked');
+            menuButton.classList.toggle('active');
             if (sidebar) {
                 sidebar.classList.toggle('active');
             }
@@ -23,26 +23,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Close sidebar when close button is clicked
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
+    if (closeSidebarButton) {
+        closeSidebarButton.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent event from bubbling up
             console.log('Close button clicked');
             if (sidebar) {
                 sidebar.classList.remove('active');
             }
-            if (hamburger) {
-                hamburger.classList.remove('active');
+            if (menuButton) {
+                menuButton.classList.remove('active');
             }
         });
     }
 
     // Close sidebar when clicking outside
     document.addEventListener('click', function(e) {
-        if (sidebar && hamburger) {
-            if (!sidebar.contains(e.target) && !hamburger.contains(e.target) && sidebar.classList.contains('active')) {
+        if (sidebar && menuButton) {
+            if (!sidebar.contains(e.target) && !menuButton.contains(e.target) && sidebar.classList.contains('active')) {
                 console.log('Clicked outside sidebar');
                 sidebar.classList.remove('active');
-                hamburger.classList.remove('active');
+                menuButton.classList.remove('active');
             }
         }
     });
