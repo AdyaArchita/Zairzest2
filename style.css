@@ -199,6 +199,8 @@ nav ul a:hover {
     background-size: cover;
     cursor: pointer;
     transition: transform 0.4s ease;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card:hover {
@@ -318,13 +320,32 @@ footer {
     }
 
     .card {
-        width: 100%;
-        max-width: 31.5rem;
+        max-width: 100%;
+        min-height: 2.5rem;
+        aspect-ratio: 16/9;
     }
 
     .bottom-sec {
         height: auto;
         padding: 50px 20px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .cards {
+        width: 80%;
+    }
+    
+    .card {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media screen and (max-width: 548px) {
+    .card {
+        aspect-ratio: 1;
+        min-height: 100px;
     }
 }
 
@@ -385,7 +406,9 @@ footer {
         /* width: 200px; */
     }
 }
-
+a{
+    text-decoration: none;  
+}
 @media screen and (max-width: 445px) {
     .Zairzest-Beyno {
         font-size: calc(16px + 2vw);
@@ -572,4 +595,173 @@ footer {
         aspect-ratio: 1;
         height: auto;
     }
+}
+
+.audio-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #111;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: glow 2s ease-in-out infinite;
+    box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+    }
+    50% {
+        box-shadow: 0 0 20px #111, 0 0 25px #38ccff, 0 0 35px #38ccff;
+    }
+    100% {
+        box-shadow: 0 0 10px #111, 0 0 15px #38ccff;
+    }
+}
+
+.play-icon, .pause-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.play-icon {
+    opacity: 1;
+    background: transparent;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 4px;
+}
+
+.pause-icon {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.pause-icon::before,
+.pause-icon::after {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+.audio-btn.playing .play-icon {
+    opacity: 0;
+}
+
+.audio-btn.playing .pause-icon {
+    opacity: 1;
+}
+
+.music {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.music-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.promo-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.waves-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #38ccff;
+    border-radius: 50%;
+    animation: waves 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+.wave-1 {
+    animation-delay: 0s;
+}
+
+.wave-2 {
+    animation-delay: 0.5s;
+}
+
+.wave-3 {
+    animation-delay: 1s;
+}
+
+@keyframes waves {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.video {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.video:hover {
+    transform: scale(1.1);
+}
+
+#playPauseIcon {
+    color: #ffffff;
+    font-size: 24px;
 }
