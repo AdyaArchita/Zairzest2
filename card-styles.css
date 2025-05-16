@@ -1,0 +1,137 @@
+.card-container {
+    width: 360px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .6s ease;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card-face.front {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-face.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: rotateY(180deg);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.928) 4%, #0564aa);
+    border-radius: 10px;
+    color: white;
+    font-size: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgsec {
+    width: 100%;
+}
+
+.imgsec img {
+    width: calc(100% - 16px);
+    height: auto;
+    object-fit: contain;
+    margin: 8px;
+    display: block;
+}
+
+.nameenroll {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px;
+    align-items: center;
+    color: #fff;
+}
+
+.nameenroll .ename {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.dtp {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px 8px;
+}
+
+.dtp .edate .etitle {
+    color: #c4c4c4;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.dtp .edate .dtime {
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 769px) {
+    .card-container {
+        width: 300px;
+    }
+
+    .imgsec img {
+        width: calc(100% - 16px);
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .card-container {
+        width: 65vw;
+    }
+
+    .card-face.front {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    .imgsec img {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .nameenroll {
+        margin: 0;
+        padding: 12px 8px;
+    }
+
+    .dtp {
+        margin: 0;
+        padding: 12px 8px 8px;
+    }
+}
+
+@media screen and (max-width: 486px) {
+    .card-contain {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .imgsec {
+        width: 100%;
+    }
+} 

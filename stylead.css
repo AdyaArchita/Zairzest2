@@ -1941,62 +1941,62 @@ $highlight-color: #38CCFF;
 }
 .card-container {
   width: 360px;
-  height: 550px;
-  perspective: 1000px; 
+    height: 550px;
+    perspective: 1000px;
 }
 .card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
   transition: transform 0.6s ease; 
 }
   .card-container:hover .card{
     transform: rotateY(180deg);}
-  
 
-  .card-face {
+
+.card-face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; 
-  }
-   
+    backface-visibility: hidden;
+}
+
     .back {
-       transform: rotateY(180deg);
+    transform: rotateY(180deg);
        backface-visibility: hidden;
-        background: rgb(0,0,0);
+    background: rgb(0,0,0);
       background: linear-gradient(0deg, rgba(0,0,0,0.9276960784313726) 4%, rgba(5,100,170,1) 100%);
-      border-radius: 10px;
-      color: white;
-      font-size: 2px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
      
-    }
+}
      .front {
       background-color: #1f1f1f;
       border-radius: 10px;
-       
-       overflow: hidden; 
-    }
+
+    overflow: hidden;
+}
   
     
 
 
 .imgsec img {
-  margin: 8px;
+    margin: 8px;
   width: 344px;
   height: 386px;
 }
 .nameenroll {
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
   margin: 0 8px 8px 8px;
-  align-items: center;
-  color: #fff;
+    align-items: center;
+    color: #fff;
 
   .ename {
     font-weight: 600;
@@ -2005,22 +2005,22 @@ $highlight-color: #38CCFF;
 }
 
 .dtp {
-  padding: 12px;
-  display: flex;
-  justify-content: space-between;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
   margin: 0 8px 8px 8px;
 
   .edate {
     .etitle {
-      color: #c4c4c4;
-      font-weight: 400;
-      font-size: 12px;
-    }
+    color: #c4c4c4;
+    font-weight: 400;
+    font-size: 12px;
+}
 
     .dtime {
-      color: #fff;
-      font-weight: 500;
-      font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
     }
   }
 }
@@ -2052,13 +2052,13 @@ $highlight-color: #38CCFF;
 }
 
 @media screen and (max-width:769px) {
-  .card-container {
-    width: 300px;
-    height: 480px;
-  
-  .imgsec img {
-    margin: 8px;
-    width: 284px;
+    .card-container {
+        width: 300px;
+        height: 480px;
+
+    .imgsec img {
+        margin: 8px;
+        width: 284px;
     height: 326px;
   }
 }
@@ -2124,7 +2124,7 @@ $highlight-color: #38CCFF;
 .bottom-footer-icon {
   display: flex;
   align-items: center;
-  gap: 1rem;
+        gap: 1rem;
   background: transparent;
 }
 
@@ -2634,7 +2634,7 @@ $highlight-color: #38CCFF;
 }
 
 .home .music {
-  position: absolute;
+    position: absolute;
   margin-top: 7rem;
   margin-right: 3rem;
   z-index: 1000;
@@ -2964,7 +2964,7 @@ $highlight-color: #38CCFF;
       display: flex;
       align-items: end;
       flex-direction: row;
-      width: 100%;
+    width: 100%;
 
       justify-content: flex-end;
     }
