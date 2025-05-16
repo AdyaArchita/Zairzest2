@@ -6,45 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="register-style.css">
     <title>Zaizest 4.0</title>
+    <style>
+    .loader-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0a0a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .loader {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .loader-square {
+        background-color: #1f1f1f;
+        animation: colorChange 1s infinite ease-in-out;
+    }
+
+    .loader-square:nth-child(1) { animation-delay: 0.0s; }
+    .loader-square:nth-child(2) { animation-delay: 0.1s; }
+    .loader-square:nth-child(3) { animation-delay: 0.2s; }
+    .loader-square:nth-child(4) { animation-delay: 0.3s; }
+    .loader-square:nth-child(5) { animation-delay: 0.4s; }
+    .loader-square:nth-child(6) { animation-delay: 0.5s; }
+    .loader-square:nth-child(7) { animation-delay: 0.6s; }
+    .loader-square:nth-child(8) { animation-delay: 0.7s; }
+    .loader-square:nth-child(9) { animation-delay: 0.8s; }
+
+    @keyframes colorChange {
+        0%, 100% { background-color: #1f1f1f; }
+        50% { background-color: #0564aa; }
+    }
+
+    .content {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .content.visible {
+        opacity: 1;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="left-container">
-            <div class="text">
-                <h1>Enter the untamed</h1>
-                <h1>wilderness with</h1>
-                <h1>ZAIRZA</h1>
-                <p>Release all your stress with the exciting Tech and Fun events in the most awaited fest . Zairzest 4.0
-                    presented by Zairza.</p>
-            </div>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
         </div>
-        <div class="register-form-container">
-            <div class="register-head-text">
-                <h1>Become the Beast of the Cyber Forest</h1>
-                <p>Sign up to get into Zairzest</p>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="left-container">
+                <div class="text">
+                    <h1>Enter the untamed</h1>
+                    <h1>wilderness with</h1>
+                    <h1>ZAIRZA</h1>
+                    <p>Release all your stress with the exciting Tech and Fun events in the most awaited fest . Zairzest 4.0
+                        presented by Zairza.</p>
+                </div>
             </div>
-            <form class="register-form">
-                <div class="input-field">
-                    <input type="text" name="name" placeholder="Name">
+            <div class="register-form-container">
+                <div class="register-head-text">
+                    <h1>Become the Beast of the Cyber Forest</h1>
+                    <p>Sign up to get into Zairzest</p>
                 </div>
-                <div class="input-field">
-                    <input type="email" name="email" id="email" placeholder="Email">
+                <form class="register-form">
+                    <div class="input-field">
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password" placeholder="*******">
+                        <img src="Images/eye.svg" alt="Eye Icon" width="20px" id="eye">
+                    </div>
+                </form>
+                <p>Already a member? <a href="//">Sign In</a></p>
+                <div class="btn-container">
+                    <button class="sign-up">Sign Up</button>
+                    <p>or</p>
+                    <button class="sign-up-google">Sign Up with <img src="Images/google_logo.svg" alt="Google Logo" width="30px"></button>
                 </div>
-                <div class="input-field">
-                    <input type="password" name="password" id="password" placeholder="*******">
-                    <img src="Images/eye.svg" alt="Eye Icon" width="20px" id="eye">
-                </div>
-            </form>
-            <p>Already a member? <a href="//">Sign In</a></p>
-            <div class="btn-container">
-                <button class="sign-up">Sign Up</button>
-                <p>or</p>
-                <button class="sign-up-google">Sign Up with <img src="Images/google_logo.svg" alt="Google Logo" width="30px"></button>
             </div>
         </div>
     </div>
-    <script src="register-js.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+        const loader = document.querySelector('.loader-container');
+        const content = document.querySelector('.content');
+        
+        setTimeout(() => {
+            loader.style.display = 'none';
+            content.classList.add('visible');
+        }, 1000);
+    });
+    </script>
 </body>
 
 </html>

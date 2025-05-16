@@ -1,9 +1,11 @@
 <html lang="en">
     <head>
     <link rel="stylesheet"type="text/css"href="stylead.css">
+    <link href="sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+    <link rel="stylesheet" href="card-styles.css">
 
 <meta charset="utf-8">
 <link rel="icon" href="./logo.png">
@@ -22,12 +24,93 @@
 <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
 <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
 <title>Zairzest 4.0</title>
-<style>::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}::-webkit-scrollbar-thumb{background:#888;border-radius:10px;transition:background .3s ease}::-webkit-scrollbar-thumb:hover{background:#555}*{scrollbar-width:thin;scrollbar-color:#888 #111111}@media (max-width:768px){::-webkit-scrollbar{display:none}*{scrollbar-width:none}}
+<style>
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+.loader-square {
+    background-color: #1f1f1f;
+    animation: colorChange 1s infinite ease-in-out;
+}
+
+.loader-square:nth-child(1) { animation-delay: 0.0s; }
+.loader-square:nth-child(2) { animation-delay: 0.1s; }
+.loader-square:nth-child(3) { animation-delay: 0.2s; }
+.loader-square:nth-child(4) { animation-delay: 0.3s; }
+.loader-square:nth-child(5) { animation-delay: 0.4s; }
+.loader-square:nth-child(6) { animation-delay: 0.5s; }
+.loader-square:nth-child(7) { animation-delay: 0.6s; }
+.loader-square:nth-child(8) { animation-delay: 0.7s; }
+.loader-square:nth-child(9) { animation-delay: 0.8s; }
+
+@keyframes colorChange {
+    0%, 100% { background-color: #1f1f1f; }
+    50% { background-color: #0564aa; }
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.content.visible {
+    opacity: 1;
+}
+
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}
+::-webkit-scrollbar-thumb{background:#888;border-radius:10px;transition:background .3s ease}
+::-webkit-scrollbar-thumb:hover{background:#555}
+*{scrollbar-width:thin;scrollbar-color:#888 #111111}
+@media (max-width:768px){::-webkit-scrollbar{display:none}*{scrollbar-width:none}}
 </style>
 <script defer="defer" src="static/js/main.21bc1f92.js"></script>
+<script>
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader-container');
+    const content = document.querySelector('.content');
+    
+    setTimeout(() => {
+        loader.style.display = 'none';
+        content.classList.add('visible');
+    }, 1000);
+});
+</script>
 </head>
 <body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
-<noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="loader-container">
+        <div class="loader">
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+            <div class="loader-square"></div>
+        </div>
+    </div>
+    <div class="content">
+        <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root">
 <div>
 <div>
@@ -41,13 +124,13 @@
 </a>
 </div>
 <div class="navbar__right">
-<a href="/about-us">
+<a href="./about-us">
 <h4 class="navbar__text">About Us</h4>
 </a>
-<a href="/register">
+<a href="./register">
 <h4 class="navbar__text">Register</h4>
 </a>
-<a href="/login">
+<a href="./login">
 <h4 class="navbar__text">Sign In</h4>
 </a>
 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="navbar__menu" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +235,7 @@
 </div>
 <div class="card-face back aos-init aos-animate" data-aos="fade-up">
 <div class="overlay-content">
-<p style="font-size: 15px; padding: 20px;">Ideathon is a collaborative event where teams of 2-3 brainstorm, develop, and pitch innovative ideas to solve a given problem statement. It’s a test of creativity and practicality, with the team presenting the most impactful solution winning the prize.</p>
+<p style="font-size: 15px; padding: 20px;">Ideathon is a collaborative event where teams of 2-3 brainstorm, develop, and pitch innovative ideas to solve a given problem statement. It's a test of creativity and practicality, with the team presenting the most impactful solution winning the prize.</p>
 <button class="close-btn">Close</button>
 </div>
 </div>
@@ -177,6 +260,13 @@
 <div class="card-face back aos-init aos-animate" data-aos="fade-up">
 <div class="overlay-content"><p style="font-size: 15px; padding: 20px;">Designathon is an intense creative competition where participants work in teams to design innovative solutions for real-world problems. Teams will have limited time to brainstorm, develop, and present their ideas using design principles and creativity. The event encourages unique approaches, and the team with the best design solution will take home the prize.</p>
 <button class="close-btn">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -248,27 +338,104 @@
 <div class="waves wave-3"></div>
 </div>
 </div>
-<div class="video" id="playPauseBtn" style="background-color: rgb(51, 51, 51); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-<i id="playPauseIcon" class="fa fa-play" style="color: rgb(255, 255, 255); font-size: 24px;"></i></div>
-<audio id="music" src="Darkside8.mp3"></audio>
+<div class="video" id="playPauseBtn" style="background-color: rgb(51, 51, 51); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="togglePlay()">
+<i id="playPauseIcon" class="fa fa-play" style="color: rgb(255, 255, 255); font-size: 24px;"></i>
+</div>
+<audio id="bgMusic">
+<source src="Darkside.mp3" type="audio/mp3">
+</audio>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Add Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <button class="close-btn" id="closeSidebar" aria-label="Close sidebar">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="sidebar-content">
+        <a href="/about-us" class="sidebar-link">About Us</a>
+        <a href="./register" class="sidebar-link">Register</a>
+        <a href="./login" class="sidebar-link">Sign In</a>
+        <img src="Images/zairza_sidebar.png" alt="Zairza" class="sidebar-image">
+    </div>
+</div>
+
 <script>
-    var playPauseBtn = document.getElementById('playPauseBtn');
-var playPauseIcon = document.getElementById('playPauseIcon');
-var music = document.getElementById('music');
-playPauseBtn.addEventListener('click', function() {
-  if (music.paused) {
-    music.play();
-    playPauseIcon.className = 'fa fa-pause';
-  } else {
-    music.pause();
-    playPauseIcon.className = 'fa fa-play';
-  }
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sidebar Elements
+        const menuButton = document.querySelector('.navbar__menu');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebarButton = document.getElementById('closeSidebar');
+
+        // Toggle sidebar when menu button is clicked
+        if (menuButton) {
+            menuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menuButton.classList.toggle('active');
+                if (sidebar) {
+                    sidebar.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close sidebar when close button is clicked
+        if (closeSidebarButton) {
+            closeSidebarButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (sidebar) {
+                    sidebar.classList.remove('active');
+                }
+                if (menuButton) {
+                    menuButton.classList.remove('active');
+                }
+            });
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (sidebar && menuButton) {
+                if (!sidebar.contains(e.target) && !menuButton.contains(e.target) && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    menuButton.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    let isPlaying = false;
+    const audio = document.getElementById('bgMusic');
+    const icon = document.getElementById('playPauseIcon');
+    
+    function togglePlay() {
+        if (!isPlaying) {
+            audio.play();
+            icon.className = 'fa fa-pause';
+            isPlaying = true;
+        } else {
+            audio.pause();
+            icon.className = 'fa fa-play';
+            isPlaying = false;
+        }
+    }
+
+    audio.onended = function() {
+        isPlaying = false;
+        icon.className = 'fa fa-play';
+    };
+
+    // Set initial volume
+    audio.volume = 0.5;
 </script>
 </div>
 </div>
 </div>
 </div>
-</div>
+    </div>
 </body>
 </html>
